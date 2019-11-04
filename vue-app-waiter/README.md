@@ -1,19 +1,5 @@
-# vue-app
+该项目是团队协作完成的项目之一：客户端app
 
-## Project setup
-```
-yarn install
-```
+利用Vue全家桶进行一系列的信息管理，比如顾客管理、员工管理、地址管 理、订单管理以及页面美化、数据渲染操作等等。利用vue2.0+vuex+vueRouter实现了双向的数据绑定，数据交互 及页面跳转。基本工作流程为用户页面提供想要的服务以及基本信息、数据传送到管理平台，可以为服务系统提供数 据维护，可以在线更改数据、批量删除以及关键字检索等业务，员工端可以通过该平台查找到想要的订单，可以检查 到订单的状态并可以进行“接受”或“拒绝”等等业务操作。 
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+相关技术：vue2.0、vuex、vue-cli、vueRouter、Element、Iconfont、Axios、element-ui、Qs
