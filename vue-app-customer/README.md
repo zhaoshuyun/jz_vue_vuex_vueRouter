@@ -1,19 +1,3 @@
-# vue-app
+该项目是团队协作完成的项目之一：顾客端app
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+包括顾客登陆界面、首页和订单页面，用vue+vuex+vue-Router技术，实现了数据的双向绑定，实现了数据的交互和页面的跳转。通过Html+css+vant框架对页面进行搭建，对系统进行整体构建；通过axios进行数据渲染，实现了交互效果。顾客可以实现登录、加入购物车、下单购买等功能以及查看订单、维护个人账号和地址信息。
