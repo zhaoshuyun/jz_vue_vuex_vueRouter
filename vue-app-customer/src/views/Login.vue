@@ -20,6 +20,7 @@
                     v-model="form.password"
                     type="password"
                     label="密码"
+                    right-icon="question-o"
                     placeholder="请输入密码"
                     required
                 />

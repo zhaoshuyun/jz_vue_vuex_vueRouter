@@ -4,28 +4,17 @@
     		<van-image round="true" width="8rem" height="8rem" src="https://img.yzcdn.cn/vant/cat.jpeg"/>
     		<div class="username">{{infoName}}</div>
     	</div>
-    	<!-- {{infoName}} 
-    	{{addresses}} -->
-    	<!-- <div class="content">
-    		<div class="address">
-	    		<a href="" @click.prevent="toAddressListHandler">常用地址</a>
-	    		<van-icon name="arrow" @click="toAddressListHandler"/>
-	    	</div>
-	        <div class="exit">
-	        	<a href="" @click.prevent="loyoutHandler">退出</a>
-	        	<van-icon name="arrow" @click="loyoutHandler"/>
-	        </div>
-    	</div> -->
     	<div class="content">
     		<van-cell is-link @click="toAddressListHandler">常用地址</van-cell>
-    		<van-cell is-link @click="toAddressListHandler">账户与安全</van-cell>
+    		<van-cell is-link @click="safeHandler">账户与安全</van-cell>
     		<van-cell is-link @click="toAddressListHandler">地区设置</van-cell>
     		<van-cell is-link @click="toAddressListHandler">隐私</van-cell>
-    		<van-cell is-link @click="toAddressListHandler">通用</van-cell>
-    		<van-cell is-link @click="toAddressListHandler">问题反馈</van-cell>
-			<van-cell is-link @click="loyoutHandler">退出登录</van-cell>
+    		<van-cell is-link @click="normalHandler">通用</van-cell>
+    		<van-cell is-link @click="changeHandler">切换账号</van-cell>
+    		<!-- <van-cell is-link @click="toAddressListHandler">问题反馈</van-cell> -->
+			<!-- <van-cell is-link @click="loyoutHandler">退出登录</van-cell> -->
     	</div>
-		
+		<div class="bottom" @click="loyoutHandler">退出当前账户</div>
     </div>
 </template>
 <script>
@@ -61,7 +50,29 @@ export default {
 		// 查询地址
 		toAddressListHandler(){
 			this.$router.push({path:'/manager/address'});
-		} 
+		},
+		// 账户与安全
+		safeHandler(){
+			this.$router.push({path:'/safe'})
+			
+		},
+		// 通用设置
+		normalHandler(){
+			this.$router.push({path:'/normal'})
+		},
+		// 切换账号
+		changeHandler(){
+			Dialog.confirm({
+			  	message: '您确认切换账号吗'
+			}).then(() => {
+				this.logout()
+				.then(()=>{
+					this.$router.push({path:'/login'});
+				})
+			}).catch(() => {
+			  	// on cancel
+			});
+		}
 	}
 }
 </script>
@@ -112,9 +123,23 @@ export default {
 		left: 400px !important;
 		top: 2px !important;
 	}*/
-	.van-cell{
+	/* .content{
 		font-size: 18px !important;
-		line-height: 30px !important;
+	} */
+	.van-cell{
+		font-size: 15px !important;
+		line-height: 25px !important;
 		margin-bottom: 5px;
 	}
+	/* 账户与安全 */
+	.bottom {
+        line-height: 3em;
+		font-size: 15px;
+        width: 100%;
+        position: absolute;
+        bottom: 50px;
+        text-align: center;
+        border-top: 1px solid #efefef;
+        color: red;
+    }
 </style>

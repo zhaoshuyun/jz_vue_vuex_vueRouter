@@ -20,6 +20,11 @@ import Login from '../views/Login'
 import { Toast } from 'vant'
 import {getToken} from '../utils/auth'
 import store from '../store'
+// 账户与安全
+import Safe from '../views/manager/Safe'
+// 通用
+import Normal from '../views/manager/Normal'
+
 
 Vue.use(VueRouter)
 
@@ -64,6 +69,14 @@ const routes = [{
     },{
       path:'addaddress',
       component: AddAddress
+    },{
+      path: '/safe',
+      name: 'safe',
+      component: Safe,
+    },{
+      path: '/normal',
+      name: 'normal',
+      component: Normal,
     }]
   },
   {
